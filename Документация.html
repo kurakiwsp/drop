@@ -15,9 +15,10 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start; /* Меняем на 'flex-start', чтобы элементы начинались сверху */
             min-height: 100vh;
-            overflow: auto;
+            overflow-y: auto; /* Включаем вертикальную прокрутку */
+            padding-top: 80px; /* Добавляем отступ сверху для удобства */
             transition: background 0.5s ease;
         }
 
@@ -71,6 +72,7 @@
             gap: 30px;
             align-items: center;
             padding: 40px;
+            margin-bottom: 40px; /* Добавляем отступ снизу для лучшего отображения */
         }
 
         .card {
