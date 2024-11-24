@@ -15,9 +15,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;  /* Изменить с 'center' на 'flex-start' */
+    justify-content: flex-start; 
     min-height: 100vh;
-    overflow-y: auto; /* Позволяет прокрутку по вертикали */
+    overflow-y: auto; 
     transition: background 0.5s ease;
 }
 
@@ -72,7 +72,7 @@
     gap: 30px;
     align-items: center;
     padding: 40px;
-    flex-grow: 1; /* Контейнер должен расти, чтобы занять весь доступный вертикальный пространство */
+    flex-grow: 1; 
 }
 
 
@@ -138,7 +138,6 @@
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
         }
 
-        /* Анимация для кнопки */
         .command, .header a {
             cursor: pointer;
         }
@@ -158,7 +157,6 @@
             }
         }
 
-        /* Добавим адаптивность */
         @media (max-width: 768px) {
             .container {
                 padding: 20px;
@@ -187,7 +185,36 @@
             <h2>О создателях</h2>
             <p>Данный Бот и Сайт создавались двумя людьми. Наши Discord никнеймы: <strong>asd</strong> и <strong>фыв</strong> (тест).</p>
             <p>Создателям 99 и 99 лет. Идея создания Бота всплыла внезапно.</p>
+
+            <div class="creators-images">
+                <img src="https://media.discordapp.net/attachments/1287159317463695452/1310321258168057946/image.png?ex=6744cb44&is=674379c4&hm=04f888257ad88549078cb7a36fd36e9ea32f81ab73ef724430d5bd5e3e716933&=" alt="Фото создателя 1" class="creator-img">
+                <img src="https://media.discordapp.net/attachments/1215814346127708260/1310319370655895633/image.png?ex=6744c982&is=67437802&hm=c0ea4aa937cea979773f1c06f84cb38564c00df2c1e8b0dd28c138332899d317&=" alt="Фото создателя 2" class="creator-img">
+            </div>
         </div>
+        
+        <style>
+            .creators-images {
+                display: flex;
+                gap: 20px;
+                justify-content: center;
+                margin-top: 20px;
+            }
+        
+            .creator-img {
+                width: 450px;
+                height: 400px;
+                object-fit: cover; 
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+        
+            .creator-img:hover {
+                transform: scale(1.05);
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+            }
+        </style>
+        
+        
 
         <div class="card">
             <h2>На чём написан данный Бот</h2>
