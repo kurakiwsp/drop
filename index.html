@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <link rel="icon" href="https://cdn.discordapp.com/attachments/1215814346127708260/1310242474295300166/image.png?ex=674481e5&is=67433065&hm=7c39b8ffae487fba8341772384eead59b8ecada510ffcb9c86c8b2446a68c5bd&" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DropSite</title>
+    <style>
+        body {
+            background: linear-gradient(270deg, #141e30, #243b55);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        h1 {
+            margin: 0;
+            padding-top: 20px;
+            font-size: 42px;
+            text-shadow: 2px 2px 5px #000;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 18px;
+            opacity: 0.9;
+            text-shadow: 1px 1px 3px #000;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 10px 20px;
+            background: rgba(0, 0, 0, 0.5);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+            position: fixed;
+            top: 0;
+            z-index: 10;
+        }
+
+        .drop-link {
+            font-size: 36px;
+            font-weight: bold;
+            color: #ffffff;
+            text-decoration: none;
+            margin-right: 20px;
+            transition: color 0.3s;
+        }
+
+        .drop-link:hover {
+            color: #ffcc00;
+        }
+
+        .doc-link {
+            font-size: 20px;
+            color: #ffffff;
+            background-color: #007acc;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .doc-link:hover {
+            background-color: #005f99;
+            transform: scale(1.1);
+        }
+
+        .welcome {
+            margin-top: 100px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .welcome h1 {
+            color: #ffcc00;
+            text-shadow: 2px 2px 10px #000;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .button-container {
+            margin-top: 30px;
+            animation: slideUp 2s ease-in-out;
+        }
+
+        @keyframes slideUp {
+            0% { transform: translateY(50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        .button {
+            background: linear-gradient(90deg, #007acc, #00bfff);
+            color: #ffffff;
+            border: none;
+            border-radius: 50px;
+            padding: 10px 25px;
+            font-size: 18px;
+            margin: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .drop {
+            position: absolute;
+            width: 10px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            animation: fall linear infinite;
+            top: -20px;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+
+        .star {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: #fff;
+            border-radius: 50%;
+            animation: twinkle 1.5s infinite alternate;
+            opacity: 0.8;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.8; }
+            50% { opacity: 1; }
+            100% { opacity: 0.8; }
+        }
+
+        /* Особенности бота */
+        .features {
+            margin-top: 50px;
+            font-size: 18px;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 900px;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        .features h2 {
+            font-size: 30px;
+            margin-bottom: 15px;
+            color: #ffcc00;
+        }
+
+        .feature-item {
+            margin-bottom: 15px;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .feature-item strong {
+            color: #ffcc00;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <a href="index.html" class="drop-link">Drop</a>
+        <a href="Документация.html" class="doc-link" target="_blank">Документация</a>
+    </div>
+
+    <div class="welcome">
+        <h1>Добро пожаловать на сайт DropSite!</h1>
+        <p>Drop — это многофункциональный бот с играми, экономикой и уникальными возможностями.</p>
+    </div>
+
+    <div class="features">
+        <h2>Особенности бота</h2>
+        <div class="feature-item">
+            <strong>текст:</strong> текст
+        </div>
+        <div class="feature-item">
+            <strong>текст:</strong> текст
+        </div>
+        <div class="feature-item">
+            <strong>текст:</strong> текст
+        </div>
+        <div class="feature-item">
+            <strong>текст:</strong> текст
+        </div>
+        <div class="feature-item">
+            <strong>текст:</strong> текст
+        </div>
+    </div>
+
+    <div class="button-container">
+        <a href="https://discord.gg/8a28s5QeRc" class="button">Discord Сервер Бота</a>
+        <a href="ссылка" class="button">Добавить</a>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 DropSite. Все права защищены.</p>
+    </div>
+
+    <script>
+        for (let i = 0; i < 50; i++) {
+            let drop = document.createElement('div');
+            drop.classList.add('drop');
+            drop.style.left = `${Math.random() * 100}vw`;
+            drop.style.animationDuration = `${Math.random() * 2 + 3}s`;
+            document.body.appendChild(drop);
+        }
+
+        for (let i = 0; i < 100; i++) {
+            let star = document.createElement('div');
+            star.classList.add('star');
+            star.style.left = `${Math.random() * 100}vw`;
+            star.style.top = `${Math.random() * 100}vh`;
+            star.style.animationDuration = `${Math.random() * 2 + 1}s`;
+            document.body.appendChild(star);
+        }
+    </script>
+</body>
+
+</html>
