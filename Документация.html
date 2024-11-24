@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://cdn.discordapp.com/attachments/1215814346127708260/1310242474295300166/image.png?ex=674481e5&is=67433065&hm=7c39b8ffae487fba8341772384eead59b8ecada510ffcb9c86c8b2446a68c5bd&" type="image/png">
+    <title>Документация</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            background: linear-gradient(135deg, #2a2a2a, #434343);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow: hidden;
+            transition: background 0.5s ease;
+        }
+
+        .header {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 100;
+        }
+
+        .header a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 24px;
+            font-weight: 700;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .header a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3rem;
+            margin: 20px 0;
+            text-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            padding: 20px 30px;
+            color: #fff;
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .card h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #ffcc00;
+            text-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+        }
+
+        .card p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .card hr {
+            border: none;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.3);
+            margin: 15px 0;
+        }
+
+        .commands {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: flex-start;
+            margin-top: 10px;
+        }
+
+        .command {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 10px 15px;
+            font-size: 1rem;
+            color: #fff;
+            font-weight: 600;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .command:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+        }
+
+        /* Анимация для кнопки */
+        .command, .header a {
+            cursor: pointer;
+        }
+
+        .container .card {
+            animation: slideUp 0.6s ease-out;
+        }
+
+        @keyframes slideUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="index.html">Drop</a>
+    </div>
+
+    <h1>Документация Бота Drop</h1>
+
+    <div class="container">
+        <div class="card">
+            <h2>О создателях</h2>
+            <p>Данный Бот и Сайт создавались двумя людьми. Наши Discord никнеймы: <strong>asd</strong> и <strong>фыв</strong> (тест).</p>
+            <p>Создателям 99 и 99 лет. Идея создания Бота всплыла внезапно.</p>
+        </div>
+
+        <div class="card">
+            <h2>На чём написан данный Бот</h2>
+            <p>Бот написан на Python 3.12 с использованием библиотеки Disnake 2.9.2.</p>
+        </div>
+
+        <div class="card">
+            <h2>Команды</h2>
+            <hr>
+            <div class="commands">
+                <div class="command">/команда1 - описание</div>
+                <div class="command">/команда2 - описание</div>
+                <div class="command">/команда3 - описание</div>
+                <div class="command">/команда4 - описание</div>
+                <div class="command">/команда5 - описание</div>
+                <div class="command">/команда6 - описание</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
