@@ -209,6 +209,26 @@
             color: #ffcc00;
         }
 
+        .image-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .image-container img {
+            width: 45%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        }
+
     </style>
 </head>
 
@@ -226,48 +246,75 @@
     <div class="features">
         <h2>Особенности бота</h2>
         <div class="feature-item">
-            <strong>текст:</strong> текст
+            <strong>Простота использования:</strong> интуитивно понятные команды с удобным интерфейсом.
         </div>
         <div class="feature-item">
-            <strong>текст:</strong> текст
+            <strong>Управление сервером:</strong> продвинутые модераторские команды для обеспечения порядка.
         </div>
         <div class="feature-item">
-            <strong>текст:</strong> текст
+            <strong>Персонализация:</strong> настройка приветствий, уведомлений и ролей под сервер.
         </div>
         <div class="feature-item">
-            <strong>текст:</strong> текст
+            <strong>Развлечения:</strong> мини-игры, викторины и рандомайзеры для поднятия настроения.
         </div>
         <div class="feature-item">
-            <strong>тектс:</strong> текст
+            <strong>Поддержка:</strong> регулярные обновления и возможность связаться с создателями.
         </div>
-    </div>
+        <div class="image-container">
+            <img src="https://media.discordapp.net/attachments/1215814346127708260/1310242474295300166/image.png?ex=674481e5&is=67433065&hm=7c39b8ffae487fba8341772384eead59b8ecada510ffcb9c86c8b2446a68c5bd&=&width=671&height=671" alt="Фото 1" class="image-large">
+        </div>
+        
+        <style>
+            .image-large {
+                width: 200px;
+                height: 400px;
+                object-fit: cover;
+                border-radius: 10px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+                transition: transform 0.3s, box-shadow 0.3s;
+                margin-bottom: 20px; 
+            }
+        
+            .image-large:hover {
+                transform: scale(1.05);
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+            }
+
+        </style>
 
     <div class="button-container">
-        <a href="https://discord.gg/8a28s5QeRc" class="button">Discord Сервер Бота</a>
-        <a href="ссылка" class="button">Добавить</a>
+        <a href="https://discord.com/api/oauth2/authorize?client_id=1166766042488698890&permissions=8&scope=bot"
+            class="button">Добавить бота</a>
+        <a href="https://discord.com/invite/76Tuwyxj3h" class="button">Присоединиться к серверу</a>
     </div>
 
     <div class="footer">
-        <p>&copy; 2024 DropSite. Все права защищены.</p>
+        <p>© 2024 DropSite. Все права защищены.</p>
     </div>
 
     <script>
         for (let i = 0; i < 50; i++) {
             let drop = document.createElement('div');
-            drop.className = 'drop';
+            drop.classList.add('drop');
             drop.style.left = Math.random() * 100 + 'vw';
-            drop.style.animationDuration = Math.random() * 2 + 2 + 's';
+            drop.style.animationDuration = Math.random() * 2 + 3 + 's';
             document.body.appendChild(drop);
         }
 
-        for (let i = 0; i < 100; i++) {
-            let star = document.createElement('div');
-            star.className = 'star';
-            star.style.left = Math.random() * 100 + 'vw';
-            star.style.top = Math.random() * 100 + 'vh';
-            star.style.animationDuration = Math.random() * 2 + 1 + 's';
-            document.body.appendChild(star);
+        function createStars() {
+            const starCount = 100;
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                star.style.left = Math.random() * 100 + 'vw';
+                star.style.top = Math.random() * 100 + 'vh';
+                star.style.animationDuration = Math.random() * 3 + 1 + 's';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                document.body.appendChild(star);
+            }
         }
+
+        createStars();
     </script>
 </body>
 
