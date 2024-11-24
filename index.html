@@ -15,14 +15,25 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            height: 100vh;
+            min-height: 100vh; /* Используем min-height */
+            height: auto; /* Убираем фиксированную высоту */
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
             text-align: center;
-            overflow: auto;
+            overflow-x: hidden; /* Ограничиваем горизонтальную прокрутку */
             position: relative;
+            overflow-y: auto; /* Разрешаем вертикальную прокрутку */
+        }
+
+        @media (max-width: 768px) {
+            body {
+                overflow-y: auto; /* Обеспечиваем вертикальную прокрутку на мобильных устройствах */
+            }
+            .header, .footer {
+                position: relative; /* Убираем фиксированное позиционирование, чтобы не блокировать прокрутку */
+            }
         }
 
         @keyframes gradientAnimation {
@@ -241,17 +252,17 @@
         for (let i = 0; i < 50; i++) {
             let drop = document.createElement('div');
             drop.classList.add('drop');
-            drop.style.left = `${Math.random() * 100}vw`;
-            drop.style.animationDuration = `${Math.random() * 2 + 3}s`;
+            drop.style.left = Math.random() * 100 + 'vw';
+            drop.style.animationDuration = Math.random() * 2 + 3 + 's';
             document.body.appendChild(drop);
         }
 
         for (let i = 0; i < 100; i++) {
             let star = document.createElement('div');
             star.classList.add('star');
-            star.style.left = `${Math.random() * 100}vw`;
-            star.style.top = `${Math.random() * 100}vh`;
-            star.style.animationDuration = `${Math.random() * 2 + 1}s`;
+            star.style.left = Math.random() * 100 + 'vw';
+            star.style.top = Math.random() * 100 + 'vh';
+            star.style.animationDuration = Math.random() * 3 + 2 + 's';
             document.body.appendChild(star);
         }
     </script>
